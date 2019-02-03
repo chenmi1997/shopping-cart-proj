@@ -49,27 +49,37 @@ x = 1 # our counter variable
 #
 
 running_total = 0
+selected_ids = []
 
 while True:
         selected_id = input("Please input a product identifier: ")
         if selected_id == "DONE":
                 break
         else:
-                matchings_products = [p for p in products if str(p["id"]) == str(selected_id)]
-                product = matchings_products[0]
-                running_total = running_total + product["price"]
-                print("SELECTED PRODUCT: " + product["name"] + " " + str(product["price"]))
-
+                # matchings_products = [p for p in products if str(p["id"]) == str(selected_id)]
+                # product = matchings_products[0]
+                # running_total = running_total + product["price"]
+                # print("SELECTED PRODUCT: " + product["name"] + " " + str(product["price"]))
+                selected_ids.append(selected_id)
 # x = 1
 
 #
 # INFO DISPLAY / OUTPUT
 #
 
+# print(selected_ids)
+
+for selected_id in selected_ids:
+        matchings_products = [p for p in products if str(p["id"]) == str(selected_id)]
+        product = matchings_products[0]
+        running_total = running_total + product["price"]
+        print("SELECTED PRODUCT: " + product["name"] + " " + str(product["price"]))
+                
+
 print("TOTAL PRICE: " + str(running_total))
 
-while x < 5:
-    selected_id = 1 # input("Please select a product id (1-20)")
+# while x < 5:
+    #selected_ids = 1 # input("Please select a product id (1-20)")
     #product = {
     #    "id":1, 
     #    "name": "Chocolate Sandwich Cookies", 
