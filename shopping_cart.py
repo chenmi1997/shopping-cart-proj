@@ -48,11 +48,6 @@ x = 1 # our counter variable
 # INFO CAPTURE / INPUT
 #
 
-selected_id = input("Please input a product identifier: ")
-matchings_products = [p for p in products if str(p["id"] == str(selected_id))]
-product = matchings_products[0]
-print("SELECTED PRODUCT: " + matchings_products["name"] + " " + str(matchings_products["price"]))
-
 running_total = 0
 
 while True:
@@ -60,18 +55,18 @@ while True:
         if selected_id == "DONE":
                 break
         else:
-            matchings_products = [p for p in products if str(p["id"]) == str(selected_id)]
-            product = matchings_products[0]
-            running_total = running_total + price
-            print("SELECTED PRODUCT: " + product["name"] + " " + str(matchings_products))
+                matchings_products = [p for p in products if str(p["id"]) == str(selected_id)]
+                product = matchings_products[0]
+                running_total = running_total + product["price"]
+                print("SELECTED PRODUCT: " + product["name"] + " " + str(product["price"]))
 
-
-
-x = 1
+# x = 1
 
 #
 # INFO DISPLAY / OUTPUT
 #
+
+print("TOTAL PRICE: " + str(running_total))
 
 while x < 5:
     selected_id = 1 # input("Please select a product id (1-20)")
