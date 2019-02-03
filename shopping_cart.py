@@ -69,14 +69,17 @@ while True:
 
 # print(selected_ids)
 
+print("SELECTED PRODUCTS: ")
+
 for selected_id in selected_ids:
         matchings_products = [p for p in products if str(p["id"]) == str(selected_id)]
         product = matchings_products[0]
         running_total = running_total + product["price"]
-        print("SELECTED PRODUCT: " + product["name"] + " " + str(product["price"]))
-                
+        print("... " + product["name"] + " (" + str(product["price"]) + ")")
+print("SUBTOTAL: " + str(running_total))
+print("TAX: " + str(float(.06)*(running_total)))
+print("TOTAL: " + str(float(1.06)*(running_total)))
 
-print("TOTAL PRICE: " + str(running_total))
 
 # while x < 5:
     #selected_ids = 1 # input("Please select a product id (1-20)")
@@ -86,13 +89,9 @@ print("TOTAL PRICE: " + str(running_total))
     #    "department": "snacks", 
     #    "aisle": "cookies cakes", 
     #    "price": 3.50
-    #}
+    # }
     # matchings_products = [p for p in products if p["id"] == selected_id]
     # product = matchings_products[0]
     # price = product["price"] # 4.95
     # running_total = running_total + price
     # x = x + 1
-
-print("THE TOTAL PRICE IS: " + str(running_total))
-
-# todo: calculate tax, add tax + total
