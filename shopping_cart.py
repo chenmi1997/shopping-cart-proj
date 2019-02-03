@@ -4,9 +4,9 @@ import datetime
 
 t = datetime.datetime.now()
 
-print("STARTED AT: " + str(t))
+# print("STARTED AT: " + str(t))
 
-print(t.strftime("%Y-%m-%d"))
+# print(t.strftime("%Y-%m-%d"))
 
 products = [
     {
@@ -69,17 +69,37 @@ while True:
 
 # print(selected_ids)
 
+print("---------------------------")
+print("CHEN'S GROCERY")
+print("WWW.CHENS-GROCERY.COM")
+print("---------------------------")
+print("CHECKOUT AT: " + (t.strftime("%Y-%m-%d")) + " " + (t.strftime("%I:%M %p")))
+print("---------------------------")
+
 print("SELECTED PRODUCTS: ")
 
 for selected_id in selected_ids:
         matchings_products = [p for p in products if str(p["id"]) == str(selected_id)]
         product = matchings_products[0]
         running_total = running_total + product["price"]
-        print("... " + product["name"] + " (" + str(product["price"]) + ")")
-print("SUBTOTAL: " + str(running_total))
-print("TAX: " + str(float(.06)*(running_total)))
-print("TOTAL: " + str(float(1.06)*(running_total)))
+        formatted_price = "{0:.2f}".format(product["price"])
+        print("... " + product["name"] + " ($" + formatted_price + ")")
 
+tax = running_total * .06
+total = tax + running_total
+
+formatted_tax = "{0:.2f}".format(tax)
+formatted_total = "{0:.2f}".format(total)
+
+print("---------------------------")
+
+print("SUBTOTAL: $" + str(running_total))
+print("TAX: $" + formatted_tax)
+print("TOTAL: $" + formatted_total)
+
+print("---------------------------")
+print("THANKS, SEE YOU AGAIN SOON!")
+print("---------------------------")
 
 # while x < 5:
     #selected_ids = 1 # input("Please select a product id (1-20)")
