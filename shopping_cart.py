@@ -4,10 +4,6 @@ import datetime
 
 t = datetime.datetime.now()
 
-# print("STARTED AT: " + str(t))
-
-# print(t.strftime("%Y-%m-%d"))
-
 products = [
     {
         "id":1, 
@@ -51,15 +47,13 @@ x = 1 # our counter variable
 running_total = 0
 selected_ids = []
 
+print("Please type DONE when you are finished selecting products")
+
 while True:
         selected_id = input("Please input a product identifier: ")
         if selected_id == "DONE":
                 break
         else:
-                # matchings_products = [p for p in products if str(p["id"]) == str(selected_id)]
-                # product = matchings_products[0]
-                # running_total = running_total + product["price"]
-                # print("SELECTED PRODUCT: " + product["name"] + " " + str(product["price"]))
                 selected_ids.append(selected_id)
 # x = 1
 
@@ -100,18 +94,3 @@ print("TOTAL: $" + formatted_total)
 print("---------------------------")
 print("THANKS, SEE YOU AGAIN SOON!")
 print("---------------------------")
-
-# while x < 5:
-    #selected_ids = 1 # input("Please select a product id (1-20)")
-    #product = {
-    #    "id":1, 
-    #    "name": "Chocolate Sandwich Cookies", 
-    #    "department": "snacks", 
-    #    "aisle": "cookies cakes", 
-    #    "price": 3.50
-    # }
-    # matchings_products = [p for p in products if p["id"] == selected_id]
-    # product = matchings_products[0]
-    # price = product["price"] # 4.95
-    # running_total = running_total + price
-    # x = x + 1
