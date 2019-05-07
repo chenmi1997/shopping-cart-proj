@@ -16,7 +16,7 @@ Download the source code:
 
 ```shell
 git clone git@github.com:s2t2/shopping-cart-project.git
-cd shopping-cart-project/
+cd shopping_cart/
 ```
 
 ## Usage
