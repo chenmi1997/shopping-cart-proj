@@ -4,10 +4,10 @@ import datetime
 
 t = datetime.datetime.now()
 
-if __name__ == "__main__":
+def to_usd(my_price):
+    return "${0:,.2f}".format(my_price)
 
-    def to_usd(my_price):
-        return "${0:,.2f}".format(my_price)
+if __name__ == "__main__":
 
     # formatted_tax = "{0:.2f}".format(tax)
     # formatted_total = "{0:.2f}".format(total)
