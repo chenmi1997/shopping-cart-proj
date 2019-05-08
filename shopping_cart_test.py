@@ -7,7 +7,7 @@ def test_usd():
     result1 = to_usd(1000)
     result2 = to_usd(57.3333)
     result3 = to_usd(.011111111)
-    assert result == "$ 10.00"
-    assert result1 == "$ 1000.00"
-    assert result2 == "$ 57.33"
-    assert result3 == "$ 0.01"
+    assert result == "$10.00"
+    assert result1 == "$1000.00"
+    assert result2 == "$57.33"
+    assert result3 == "$0.01"
